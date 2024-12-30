@@ -1,5 +1,7 @@
 print("WHERE TO EAT V1")
 
+print("Choose three potential spots.")
+
 option1 = input("Option 1: ")
 option2 = input("Option 2: ")
 option3 = input("Option 3: ")
