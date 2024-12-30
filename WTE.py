@@ -26,6 +26,6 @@ choice = random.choice(options)
 ready = str(input("Are you ready for your random choice? Y/N "))
 ready = ready.lower()
 if ready in ["y", "yes"]:
-    print(f"Head to {choice}!")
+    print(f"Head to \033[34m{choice}!\033[0m")
 else:
     print("Come back soon!")
