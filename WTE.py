@@ -15,7 +15,7 @@ else:
 
 ready = str(input("Do you want me to decide? Y/N "))
 
-if ready in ["Y", "y", "yes", "Yes", "YES"]:
+if ready in ["Y", "y", "yes", "Yes", "YES", "YEs", "yEs", "yES", "yeS", "YeS"]:
     print("You are going to:", option2)
 else:
     print("Come back soon!")
