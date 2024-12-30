@@ -13,4 +13,10 @@ if option1 == option2 == option3:
 else:
     print("Some spots have a greater chance than others.")
 
-print("You are going to:", option2)
+ready = str(input("Do you want me to decide? Y/N "))
+
+if ready == "Y" or "y":
+    print("You are going to:", option2)
+else:
+    print("Come back soon!")
+
