@@ -9,11 +9,13 @@ print(f"You chose {numOptions} options.")
 #Asks for option names and displays list in uppercase
 options = [input(f"Option {i+1}: ") for i in range(numOptions)]
 options = [s.upper() for s in options]
-print("Your options are:", options)
+print("Your options are:", *options)
 
+#Checks for duplicates and lets user know that some spots have a higher chance of being selected than others
+def duplicates(list):
+    return len(list) != len(set(list))
 
-
-#if option1 != option2 != option3:
-#    print("All spots have an equal chance.")
-#else:
-#    print("Some spots have a greater chance than others.")
+if duplicates(options):
+    print("Some spots have a greater chance than others.")
+else:
+    print("All spots have an equal chance.")
