@@ -16,6 +16,6 @@ def duplicates(list):
     return len(list) != len(set(list))
 
 if duplicates(options):
-    print("Some spots have a greater chance than others.")
+    print("\033[91mSome spots have a greater chance than others.\033[0m")
 else:
     print("All spots have an equal chance.")
