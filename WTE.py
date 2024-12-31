@@ -7,7 +7,7 @@ print("")
 
 allsame = False
 
-#Asks how many options and displays integer answer
+#Asks how many options and integer answer
 numOptions = int(input("How many options do you want to have? "))
 print(f"You chose {numOptions} options. Input your spots.")
 
@@ -65,3 +65,6 @@ else:
         else:
             #print(f"Go to \033[91m{options[-1]}!\033[0m")
             print("While error.")
+
+if len(options) == 1:
+    print(f"Your final option is \033[91m{options[-1]}!\033[0m")
