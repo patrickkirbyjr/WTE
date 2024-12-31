@@ -17,6 +17,7 @@ print("")
 
 def display_options(options, numOptions):
     print("Your options are: ")
+    numOptions = len(options)
     counts = Counter(options)
     for value, count in counts.items():
         print(f"{value}: {count} count ({round(count/numOptions*100, 2)}% base chance)") #prints out counts of each place
