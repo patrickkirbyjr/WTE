@@ -1,5 +1,6 @@
 #Ideas: choose a fighter, D&D-style battles (short, 1v1 or 2v1)
 import random
+from collections import Counter
 
 print("WHERE TO EAT V1")
 
@@ -10,7 +11,13 @@ print(f"You chose {numOptions} options. Input your spots.")
 #Asks for option names and displays list in uppercase
 options = [input(f"Option {i+1}: ") for i in range(numOptions)]
 options = [s.upper() for s in options]
-print("Your options are:", *options)
+#print("Your options are:", *options) #prints out a list
+
+print("Your options are: ")
+counts = Counter(options)
+for value, count in counts.items():
+    print(f"{value}: {count} count ({count/numOptions*100}% base chance)") #prints out counts of each place
+
 
 #Checks for duplicates and lets user know that some spots have a higher chance of being selected than others
 def duplicates(list):
