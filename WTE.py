@@ -5,6 +5,8 @@ from collections import Counter
 print("WHERE TO EAT V1")
 print("")
 
+allsame = False
+
 #Asks how many options and displays integer answer
 numOptions = int(input("How many options do you want to have? "))
 print(f"You chose {numOptions} options. Input your spots.")
@@ -15,7 +17,7 @@ options = [s.upper() for s in options]
 print("")
 #print("Your options are:", *options) #prints out a list
 
-def display_options(options, numOptions):
+def display_options(options, numOptions): #displays options with counts
     print("Your options are: ")
     numOptions = len(options)
     counts = Counter(options)
@@ -45,16 +47,21 @@ def process():
     check_duplicates(options)
     print("")
 
-process()
+#process()
 
-while len(options) > 1:
-    ready = str(input("Are you ready to eliminate one option? Y/N "))
-    print("")
-    ready = ready.lower()
-    if ready in ["y", "yes"]:
-        remove_one_random(options, numOptions)
-        process()
-    else:
-        print(options)
+display_options(options, numOptions)
+check_duplicates(options)
 
-print(f"Head to \033[91m{options[-1]}!\033[0m")
+if len(set(options)) == 1:
+    print(f"Your only option is \033[91m{options[-1]}!\033[0m")
+else:
+    while len(options) > 1:
+        ready = str(input("Are you ready to eliminate one option? Y/N "))
+        print("")
+        ready = ready.lower()
+        if ready in ["y", "yes"]:
+            remove_one_random(options, numOptions)
+            process()
+        else:
+            #print(f"Go to \033[91m{options[-1]}!\033[0m")
+            print("While error.")
